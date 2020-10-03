@@ -26,6 +26,8 @@ public class UserById extends HttpServlet {
             result = user.toString();
         } catch (FieldNotFoundInDataBase fieldNotFoundInDataBase) {
             result = fieldNotFoundInDataBase.getMessage().toString();
+        } catch (NumberFormatException e){
+            result = "Invalid format type.";
         }
 
 

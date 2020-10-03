@@ -32,7 +32,13 @@ public class AllUsers extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter messageWriter = response.getWriter();
-        messageWriter.println("<h1>" + allUsers + "<h1>");
+
+        messageWriter.println("<html>" +
+                "<head></head>\n" +
+                "<body>" + allUsers +
+                "</body>" +
+                "</html>");
+
     }
 
     public void destroy() {

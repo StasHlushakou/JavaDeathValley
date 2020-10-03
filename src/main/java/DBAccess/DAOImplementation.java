@@ -53,7 +53,7 @@ public class DAOImplementation implements DAOInterface<UserDTO>{
                 String name = resultSet.getString("name");
                 String sureName = resultSet.getString("sureName");
 
-                user = new UserDTO(userid, name, sureName);
+                user = new UserDTO(userid, name.trim(), sureName.trim());
             } else {
                 throw new FieldNotFoundInDataBase( "User with id " + Integer.toString(id) + " not found in database" );
             }
@@ -84,7 +84,7 @@ public class DAOImplementation implements DAOInterface<UserDTO>{
                 String name = resultSet.getString("name");
                 String sureName = resultSet.getString("sureName");
 
-                UserDTO user = new UserDTO(userid, name, sureName);
+                UserDTO user = new UserDTO(userid, name.trim(), sureName.trim());
                 users.add(user);
 
             }
@@ -99,6 +99,63 @@ public class DAOImplementation implements DAOInterface<UserDTO>{
 
     }
 
+
+    @Override
+    public UserDTO getRichestUser() throws FieldNotFoundInDataBase {
+
+        this.createConnection();
+        UserDTO user = null;
+        String sql;
+        sql = "SELECT * FROM user WHERE userid = (SELECT userid FROM account WHERE account = (SELECT MAX(account) FROM account));";
+
+        try {
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()){
+                int userid = resultSet.getInt("userid");
+                String name = resultSet.getString("name");
+                String sureName = resultSet.getString("sureName");
+
+                user = new UserDTO(userid, name.trim(), sureName.trim());
+            } else {
+                throw new FieldNotFoundInDataBase( "Database is empty" );
+            }
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        this.closeConnection();
+
+        return user;
+
+    }
+
+    @Override
+    public int getAccountSum() {
+
+        this.createConnection();
+
+        String sql;
+        sql = "SELECT SUM(account) FROM account;";
+        int sum = 0 ;
+        try {
+            ResultSet resultSet = statement.executeQuery(sql);
+            if (resultSet.next()) {
+                sum = resultSet.getInt("SUM(account)");
+            }
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        this.closeConnection();
+
+        return sum;
+
+
+
+    }
 
 
 }

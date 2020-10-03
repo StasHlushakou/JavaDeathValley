@@ -38,10 +38,6 @@ public class UserDTO {
 
     @Override
     public String toString() {
-        return "UserDTO{" +
-                "userid=" + userid +
-                ", name='" + name + '\'' +
-                ", sureName='" + sureName + '\'' +
-                '}';
+        return "Userid : " + userid + ", name : " + name + ", sureName : " + sureName;
     }
 }
