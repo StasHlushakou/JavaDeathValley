@@ -1,9 +1,6 @@
 package servlets;
 
-import DBAccess.DAOImplementation;
-import DBAccess.DAOInterface;
-import DBAccess.FieldNotFoundInDataBase;
-import DBAccess.UserDTO;
+import DBAccess.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +13,7 @@ public class JSPServlet  extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        DAOInterface<UserDTO> db = new DAOImplementation();
+        DAOInterface<UserDTO> db = new DAOImplementationHibernate();
         int sum = db.getAccountSum();
         UserDTO richestUser = null;
 

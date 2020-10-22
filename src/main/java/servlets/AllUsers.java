@@ -1,6 +1,7 @@
 package servlets;
 
 import DBAccess.DAOImplementation;
+import DBAccess.DAOImplementationHibernate;
 import DBAccess.DAOInterface;
 import DBAccess.UserDTO;
 
@@ -22,7 +23,7 @@ public class AllUsers extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        DAOInterface db = new DAOImplementation();
+        DAOInterface db = new DAOImplementationHibernate();
         List<UserDTO> list = db.getAllUsers();
 
         String allUsers = "";

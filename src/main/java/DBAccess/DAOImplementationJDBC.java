@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOImplementation implements DAOInterface<UserDTO>{
+public class DAOImplementationJDBC implements DAOInterface<UserDTO>{
 
     static final String DATABASE_URL = "jdbc:mysql://localhost:3306/banklist?serverTimezone=Europe/Moscow&useSSL=false";
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";

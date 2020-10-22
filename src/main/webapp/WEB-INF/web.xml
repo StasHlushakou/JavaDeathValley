@@ -7,8 +7,15 @@
          metadata-complete="false">
 
   <display-name>JavaDeathValley</display-name>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
-  <servlet>
+    <servlet>
     <servlet-name>AllUsers</servlet-name>
     <servlet-class>servlets.AllUsers</servlet-class>
   </servlet>
@@ -32,14 +39,19 @@
     <servlet-name>JSPServlet</servlet-name>
     <servlet-class>servlets.JSPServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
     <servlet-name>JSPServlet</servlet-name>
     <url-pattern>/JSP</url-pattern>
   </servlet-mapping>
-
-
-
-
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.form</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

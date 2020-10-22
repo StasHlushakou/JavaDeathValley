@@ -1,10 +1,26 @@
 package DBAccess;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "account")
 public class AccountDTO {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "accountId")
     private int accountId;
+
+    @Column (name = "account")
     private int account;
+
+    @Column (name = "userid")
     private int userid;
+
+    public AccountDTO() {
+
+    }
 
     public AccountDTO(int accountId, int account, int userid) {
         this.accountId = accountId;

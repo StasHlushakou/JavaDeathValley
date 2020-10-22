@@ -1,10 +1,25 @@
 package DBAccess;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user")
 public class UserDTO {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "userid")
     private int userid;
+
+    @Column (name = "name")
     private String name;
+
+    @Column (name = "sureName")
     private String sureName;
+
+    public UserDTO() {
+
+    }
 
     public UserDTO(int id, String name, String sureName) {
         this.userid = id;
