@@ -1,9 +1,11 @@
 package org.example.DBAccess;
 
+import org.springframework.stereotype.Component;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class DAOImplementationJDBC implements DAOInterface<UserDTO>{
 
     static final String DATABASE_URL = "jdbc:mysql://localhost:3306/banklist?serverTimezone=Europe/Moscow&useSSL=false";
