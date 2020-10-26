@@ -1,4 +1,4 @@
-package DBAccess;
+package org.example.DBAccess;
 
 import java.sql.*;
 import java.util.ArrayList;

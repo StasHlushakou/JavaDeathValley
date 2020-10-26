@@ -1,10 +1,9 @@
 package DBAccess;
 
+import org.example.DBAccess.UserDTO;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.jws.soap.SOAPBinding;
 
 import static org.junit.Assert.*;
 

@@ -1,9 +1,8 @@
-package servlets;
+package org.example.servlets;
 
-import DBAccess.DAOImplementation;
-import DBAccess.DAOImplementationHibernate;
-import DBAccess.DAOInterface;
-import DBAccess.UserDTO;
+import org.example.DBAccess.DAOImplementationHibernate;
+import org.example.DBAccess.DAOInterface;
+import org.example.DBAccess.UserDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-
+/*
 public class AllUsers extends HttpServlet {
 
     private DAOInterface db;
@@ -48,3 +47,6 @@ public class AllUsers extends HttpServlet {
 
 
 }
+
+
+ */

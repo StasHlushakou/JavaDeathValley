@@ -1,13 +1,16 @@
-package servlets;
+package org.example.servlets;
 
-import DBAccess.*;
+import org.example.DBAccess.DAOImplementationHibernate;
+import org.example.DBAccess.DAOInterface;
+import org.example.DBAccess.FieldNotFoundInDataBase;
+import org.example.DBAccess.UserDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+/*
 public class JSPServlet  extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,3 +32,5 @@ public class JSPServlet  extends HttpServlet {
         getServletContext().getRequestDispatcher("/servlet.jsp").forward(request, response);
     }
 }
+
+ */

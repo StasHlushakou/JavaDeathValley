@@ -23,8 +23,8 @@
         </property>
 
         <!-- List of XML mapping files -->
-        <mapping class="DBAccess.UserDTO"/>
-        <mapping class="DBAccess.AccountDTO"/>
+        <mapping class="org.example.DBAccess.UserDTO"/>
+        <mapping class="org.example.DBAccess.AccountDTO"/>
 
     </session-factory>
 </hibernate-configuration>

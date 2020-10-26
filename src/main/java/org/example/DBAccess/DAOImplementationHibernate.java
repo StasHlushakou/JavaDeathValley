@@ -1,4 +1,4 @@
-package DBAccess;
+package org.example.DBAccess;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

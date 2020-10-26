@@ -1,4 +1,4 @@
-package DBAccess;
+package org.example.DBAccess;
 
 public class FieldNotFoundInDataBase extends Exception {
 
